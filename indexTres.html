@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en Raya</title>
+    <link rel="stylesheet" href="stylestres.css">
+</head>
+<body>
+    <div class="container">
+        <div class="board" id="board">
+            <!-- Celdas del tablero -->
+        </div>
+        <div id="message" class="message"></div>
+        <button onclick="resetGame()">Reiniciar Juego</button>
+        <div>
+            <label for="difficulty">Selecciona la dificultad:</label>
+            <select id="difficulty" onchange="changeDifficulty()">
+                <option value="easy">Fácil</option>
+            </select>
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+            <label for="darkModeToggle">Modo oscuro beta</label>
+        </div>
+    </div>
+    <script src="scripttres.js"></script>
+</body>
+</html>

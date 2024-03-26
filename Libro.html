@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros</title>
+    <link rel="stylesheet" href="styleslibro.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Buscar Libros</h1>
+        <form id="search-form">
+            <input type="text" id="search-term" placeholder="Ingrese el nombre del libro">
+            <button type="submit">Buscar</button>
+        </form>
+        <div id="book-results" class="book-results"></div>
+        <div id="pagination" class="pagination">
+            <button id="prev-button" class="pagination-button" disabled>Anterior</button>
+            <button id="next-button" class="pagination-button" disabled>Siguiente</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</html>

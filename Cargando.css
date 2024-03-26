@@ -1,0 +1,169 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #141618;
+  color: #B5B3A4;
+}
+
+h2{
+  color: #fff;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos del encabezado */
+header {
+  font-family: 'Segoe UI';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141618;
+  color: #FFF;
+  
+}
+.Titulo_h1_Porta{
+  margin: 50px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 50px;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 50px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+/* Estilos de las secciones */
+section {
+  padding: 110px 0;
+}
+
+section h2 {
+  margin-top: 0;
+  font-size: 2em;
+}
+
+/* Estilos de la sección de proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 50px));
+  gap: 20px;
+}
+
+.project {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  color: #FFF;
+  box-shadow: 0 0 20px rgb(236,99,58);
+}
+
+.project-image img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.project-info p {
+  margin-bottom: 0;
+}
+
+/* Estilos del formulario de contacto */
+.contact-info,
+.social-media {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.contact-item,
+.social-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-item img,
+.social-item img {
+  width: 30px; /* Tamaño de la imagen */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.contact-info {
+  flex: 1; /* Que ocupe todo el espacio disponible */
+}
+
+
+/* Estilos del pie de página */
+footer {
+  background-color: #141618;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Estilos de los enlaces */
+a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+
+
+
+
+.loader-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Ajustar al 100% del viewport height */
+  }
+  
+  .loader {
+    font-size: 24px;
+    color: #1da1f2;
+  }
+  
+  #dots {
+    opacity: 0; /* Ocultar puntos inicialmente */
+    animation: dots 1.5s infinite; /* Animación de puntos */
+  }
+  
+  @keyframes dots {
+    0%, 80%, 100% {
+      opacity: 0; /* Ocultar puntos */
+    }
+    40% {
+      opacity: 1; /* Mostrar puntos */
+    }
+  }
+  

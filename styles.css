@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI';
+    margin: 0;
+    padding: 0;
+    background-color: #141618;
+    color: #B5B3A4;
+    font-size: 15px;
+}
+
+h2{
+    color: #fff;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos del encabezado */
+header {
+    font-family: 'Segoe UI';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #141618;
+    color: #FFF;
+    
+}
+.Titulo_h1_Porta{
+    margin: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 50px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+/* Estilos de las secciones */
+section {
+    padding: 110px 0;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 2em;
+}
+
+/* Estilos de la sección de proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 50px));
+    gap: 20px;
+}
+
+.project {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    color: #FFF;
+    box-shadow: 0 0 20px rgb(236,99,58);
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.project-info p {
+    margin-bottom: 0;
+}
+
+/* Estilos del formulario de contacto */
+
+.Logos-item img{
+    padding: 10px;
+    width: 30px; /* Tamaño de la imagen */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+
+/* Estilos del pie de página */
+footer {
+    background-color: #141618;
+    color: #B5B3A4;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    color: #B5B3A4;
+}
+
+/* Estilos de los enlaces */
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+  
