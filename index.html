@@ -9,15 +9,30 @@
 </head>
 <body>
     <header>
+        <div class="header-container">
             <h1 class="Titulo_h1_Porta"><a class="a_titulo" href="index.html">Portafolio</a></h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">Acerca de mí</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Acerca de mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#about">Acerca de mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
     </header>
+    
     <section id="about">
         <div class="container">
             <h2>Acerca de Mí</h2>
@@ -104,5 +119,13 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

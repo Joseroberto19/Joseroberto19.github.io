@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     font-family: 'Segoe UI';
     margin: 0;
@@ -7,43 +8,95 @@ body {
     font-size: 15px;
 }
 
-h2{
-    color: #fff;
-}
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 /* Estilos del encabezado */
 header {
-    font-family: 'Segoe UI';
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #141618;
     color: #FFF;
-    
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    padding: 10px 20px;
 }
-.Titulo_h1_Porta{
-    margin: 50px;
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.Titulo_h1_Porta {
+    margin: 0;
+}
+
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 50px; /* Posicionamiento a la derecha */
+}
+
+/* Estilos del menú de hamburguesa */
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FFF;
+    margin-bottom: 4px;
+}
+
+/* Estilos del menú de navegación */
+nav {
+    margin-right: 20px;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 50px;
+    margin: 0;
     padding: 0;
+    display: flex;
 }
 
 nav ul li {
     display: inline;
-    margin-left: 50px;
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #FFF;
+}
+
+/* Estilos del menú móvil */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #141618;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-menu ul li {
+    display: block;
+    margin: 10px 0;
 }
 
 /* Estilos de las secciones */
@@ -54,12 +107,13 @@ section {
 section h2 {
     margin-top: 0;
     font-size: 2em;
+    color: #FFF;
 }
 
 /* Estilos de la sección de proyectos */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 50px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
@@ -72,7 +126,7 @@ section h2 {
 .project:hover {
     transform: translateY(-5px);
     color: #FFF;
-    box-shadow: 0 0 20px rgb(236,99,58);
+    box-shadow: 0 0 20px rgb(236, 99, 58);
 }
 
 .project-image img {
@@ -88,20 +142,12 @@ section h2 {
 .project-info h3 {
     margin-top: 0;
     font-size: 1.5em;
+    color: #FFF;
 }
 
 .project-info p {
     margin-bottom: 0;
 }
-
-/* Estilos del formulario de contacto */
-
-.Logos-item img{
-    padding: 10px;
-    width: 30px; /* Tamaño de la imagen */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
-}
-
 
 /* Estilos del pie de página */
 footer {
@@ -116,10 +162,55 @@ footer p {
     color: #B5B3A4;
 }
 
-/* Estilos de los enlaces */
+.Logos-item img {
+    padding: 10px;
+    width: 30px;
+    margin-right: 10px;
+}
+
 a {
     text-decoration: none;
     color: #FFF;
 }
 
-  
+/* Media Query para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    .Titulo_h1_Porta {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #141618;
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav ul li:first-child {
+        margin-top: 0;
+    }
+}
