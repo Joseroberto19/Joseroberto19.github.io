@@ -1,18 +1,19 @@
 /* Estilos generales */
 body {
-    font-family: 'Segoe UI';
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #141618;
     color: #B5B3A4;
     font-size: 15px;
+    box-sizing: border-box;
 }
 
-/* Estilos del encabezado */
+/* Encabezado */
 header {
     display: flex;
-    flex-direction: column; /* Cambia a columna para alinear verticalmente */
-    align-items: center; /* Centra horizontalmente */
+    flex-direction: column;
+    align-items: center;
     background-color: #141618;
     color: #FFF;
     position: fixed;
@@ -21,165 +22,162 @@ header {
     z-index: 999;
     padding: 10px 20px;
 }
-.header-container {
+
+.header-container-unique {
     display: flex;
-    justify-content: space-between; /* Espacio entre el título y el menú toggle */
+    justify-content: space-between; /* Asegura que el título esté a la izquierda y el menú hamburguesa a la derecha */
     align-items: center;
-    width: 100%; /* Asegúrate de que ocupa todo el ancho */
+    width: 100%;
+    max-width: 1200px;
 }
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-.Titulo_h1_Porta {
+
+.Titulo_h1_Porta_unique {
     margin: 0;
+    font-size: 24px;
 }
 
-.menu-toggle {
-    display: none;
-    position: absolute;
-    top: 20px;
-    right: 50px; /* Posicionamiento a la derecha */
-}
-
-/* Estilos del menú de hamburguesa */
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #FFF;
-    margin-bottom: 4px;
-}
-
-/* Estilos del menú de navegación */
-nav {
-    width: 100%; /* O puedes especificar un valor como 80% */
-    text-align: center; /* Centra los enlaces en el menú */
-}
-nav a {
-    color: #FFF; /* Color del texto */
-    text-decoration: none; /* Sin subrayado */
-    font-size: 16px; /* Ajusta el tamaño de la fuente */
-    position: relative; /* Para el efecto de sombra de texto */
-    transition: all 0.3s; /* Suaviza la transición */
-}
-
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Usa flexbox para alinear horizontalmente los elementos */
-    justify-content: center; /* Centra los elementos del menú */
-}
-
-nav li:hover {
-    text-shadow: 0 0 5px rgba(148, 0, 211, 1), 0 0 10px rgba(148, 0, 211, 0.5);
-}
-
-
-nav li {
-    margin: 0 15px; /* Espaciado entre los elementos del menú */
-    position: relative; /* Para el efecto de sombra */
-
-}
-nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-nav ul li:first-child {
-    margin-left: 0;
-}
-
-nav ul li a {
+.a_titulo_unique {
     text-decoration: none;
     color: #FFF;
 }
 
-/* Estilos del menú móvil */
-.mobile-menu {
+/* Menú hamburguesa */
+.menu-toggle-unique {
     display: none;
+    cursor: pointer;
+}
+
+.menu-toggle-unique span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FFF;
+    margin: 4px 0;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list-unique {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item-unique {
+    margin: 0 15px;
+}
+
+.nav-item-unique a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-item-unique a:hover {
+    color: rgba(148, 0, 211, 1);
+}
+
+/* Menú móvil */
+.mobile-menu-unique {
+    display: none;
+    flex-direction: column;
+    background-color: #141618;
+    width: 100%;
     position: absolute;
     top: 60px;
     left: 0;
-    width: 100%;
-    background-color: #141618;
 }
 
-.mobile-menu.active {
-    display: block;
+.mobile-menu-unique.active {
+    display: flex;
 }
 
-.mobile-menu ul {
+.mobile-menu-unique ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-.mobile-menu ul li {
-    display: block;
+.mobile-menu-unique ul li {
     margin: 10px 0;
 }
 
-/* Estilos de las secciones */
-section {
-    padding: 110px 0;
-}
-
-section h2 {
-    margin-top: 0;
-    font-size: 2em;
+.mobile-menu-unique ul li a {
     color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
-/* Estilos de la sección de proyectos */
-.projects-grid {
+.mobile-menu-unique ul li a:hover {
+    color: rgba(148, 0, 211, 1);
+}
+
+/* Secciones */
+section {
+    padding: 100px 20px;
+    margin-top: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la sección de proyectos */
+.projects-grid-unique {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-.project {
+.project-unique {
     border-radius: 10px;
     overflow: hidden;
+    background-color: #1e1f21;
     transition: transform 0.3s ease;
 }
 
-.project:hover {
+.project-unique:hover {
     transform: translateY(-5px);
-    color: #FFF;
     box-shadow: 0 0 20px rgb(236, 99, 58);
 }
 
-.project-image img {
-    max-width: 100%;
+.project-image-unique img {
+    width: 100%;
     height: auto;
-    border-bottom: 1px solid #dee2e6;
 }
 
-.project-info {
+.project-info-unique {
     padding: 20px;
 }
 
-.project-info h3 {
-    margin-top: 0;
-    font-size: 1.5em;
+.project-info-unique h3 {
     color: #FFF;
+    font-size: 1.5em;
 }
 
-.project-info p {
+.project-info-unique p {
     margin-bottom: 0;
 }
 
-/* Estilos del pie de página */
+/* Pie de página */
 footer {
     background-color: #141618;
     color: #B5B3A4;
     text-align: center;
     padding: 20px 0;
+    margin-top: 50px;
 }
 
 footer p {
@@ -187,55 +185,154 @@ footer p {
     color: #B5B3A4;
 }
 
-.Logos-item img {
+.Logos-item-unique img {
     padding: 10px;
     width: 30px;
     margin-right: 10px;
 }
 
-a {
-    text-decoration: none;
-    color: #FFF;
-}
-
-/* Media Query para dispositivos móviles */
-@media screen and (max-width: 767px) {
-    .Titulo_h1_Porta {
-        text-align: center;
-        margin-left: 0;
-    }
-
-    .menu-toggle {
+/* Media Queries */
+@media (max-width: 767px) {
+    .menu-toggle-unique {
         display: block;
-        cursor: pointer;
+        position: absolute;
+        right: 50px; /* Ajusta la posición del menú hamburguesa hacia la derecha */
+        top: 20px;
     }
 
     nav {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #141618;
         display: none;
     }
 
     nav.active {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
     }
 
-    nav ul {
+    .header-container-unique {
+        justify-content: space-between; /* Asegura que el menú esté a la derecha */
+    }
+
+    .nav-list-unique {
+        display: none;
+    }
+
+    .mobile-menu-unique.active {
         display: block;
+    }
+}
+
+
+
+
+
+
+/* Reloj Digital Estilos */
+
+/* Estilos para dispositivos más grandes (tabletas y escritorio) */
+@media only screen and (min-width: 600px) {
+    .clock-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        opacity: 0; /* Empezar con una opacidad de 0 para la transición */
+        transition: opacity 1s ease; 
+    }
+
+    .clock-background.show {
+        opacity: 1; /* Cambiar la opacidad a 1 cuando la clase .loaded se agrega al elemento */
+    }
+
+    .clock-body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .unique-clock-container {
         text-align: center;
     }
 
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    .unique-clock {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
     }
 
-    nav ul li:first-child {
-        margin-top: 0;
+    .unique-time-display {
+        font-size: 48px;
+        color: #333;
+        margin-bottom: 20px; /* Separación entre la hora y el botón de selección */
+    }
+
+    .unique-country-select {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        margin-left: 20px; /* Separación del botón de selección respecto al borde izquierdo */
+    }
+}
+
+/* Estilos para dispositivos más pequeños (celulares) */
+@media only screen and (max-width: 599px) {
+    .clock-body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        background-size: contain; /* Ajustar la imagen para adaptarse a la pantalla en dispositivos móviles */
+    }
+
+    .clock-background {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+
+    .unique-clock-container {
+        text-align: center;
+        margin: 20px; /* Añadir margen para dispositivos móviles */
+    }
+
+    .unique-clock {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .unique-time-display {
+        font-size: 36px;
+        color: #333;
+        text-align: center;
+    }
+
+    .unique-country-select {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+        width: calc(100% - 40px); /* Ajuste del ancho del botón de selección */
+        margin-bottom: 20px; /* Separación entre la hora y el botón de selección */
     }
 }

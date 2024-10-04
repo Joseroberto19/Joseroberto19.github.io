@@ -4,23 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reloj Digital Universal</title>
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/Joseroberto19/Recursos/refs/heads/main/Styles/stylereloj.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="background-image" id="background-image"></div>
+<body class="clock-body">
+  <div class="background-image clock-background" id="background-image"></div>
   
-  <div class="clock">
-    <div id="time"></div>
+  <div class="clock-container unique-clock-container">
+    <div class="clock unique-clock">
+      <div id="time" class="time-display unique-time-display"></div>
+    </div>
+
+    <select id="country-select" class="country-select unique-country-select">
+      <option value="Europe/London" data-image="https://raw.githubusercontent.com/Joseroberto19/Recursos/refs/heads/main/imgLandingPage/London.webp">London, UK</option>
+      <option value="America/New_York" data-image="https://raw.githubusercontent.com/Joseroberto19/Recursos/refs/heads/main/imgLandingPage/Newyork.webp">New York, USA</option>
+      <option value="Asia/Tokyo" data-image="https://github.com/Joseroberto19/Recursos/blob/main/imgLandingPage/Japon.jpg?raw=true">Tokyo, Japan</option>
+      <option value="America/Lima" data-image="https://github.com/Joseroberto19/Recursos/blob/main/imgLandingPage/PlazaArmas.jpg?raw=true">Lima, Peru</option>
+      <!-- Agrega más opciones según sea necesario -->
+    </select>
   </div>
 
-  <select id="country-select">
-    <option value="Europe/London" data-image="London.webp">London, UK</option>
-    <option value="America/New_York" data-image="newyork.jpg">New York, USA</option>
-    <option value="Asia/Tokyo" data-image="Japon.jpg">Tokyo, Japan</option>
-    <option value="America/Lima" data-image="PlazaArmas.jpg">Lima, Peru</option>
-    <!-- Agrega más opciones según sea necesario -->
-  </select>
-
-  <script src="https://raw.githubusercontent.com/Joseroberto19/Recursos/refs/heads/main/Styles/stylereloj.css"></script>
+  <script src="script.js"></script>
 </body>
 </html>
