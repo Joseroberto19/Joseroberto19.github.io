@@ -11,8 +11,8 @@ body {
 /* Estilos del encabezado */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Cambia a columna para alinear verticalmente */
+    align-items: center; /* Centra horizontalmente */
     background-color: #141618;
     color: #FFF;
     position: fixed;
@@ -21,7 +21,12 @@ header {
     z-index: 999;
     padding: 10px 20px;
 }
-
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el título y el menú toggle */
+    align-items: center;
+    width: 100%; /* Asegúrate de que ocupa todo el ancho */
+}
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -49,16 +54,36 @@ header {
 
 /* Estilos del menú de navegación */
 nav {
-    margin-right: 20px;
+    width: 100%; /* O puedes especificar un valor como 80% */
+    text-align: center; /* Centra los enlaces en el menú */
 }
+nav a {
+    color: #FFF; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    position: relative; /* Para el efecto de sombra de texto */
+    transition: all 0.3s; /* Suaviza la transición */
+}
+
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
     padding: 0;
-    display: flex;
+    margin: 0;
+    display: flex; /* Usa flexbox para alinear horizontalmente los elementos */
+    justify-content: center; /* Centra los elementos del menú */
 }
 
+nav li:hover {
+    text-shadow: 0 0 5px rgba(148, 0, 211, 1), 0 0 10px rgba(148, 0, 211, 0.5);
+}
+
+
+nav li {
+    margin: 0 15px; /* Espaciado entre los elementos del menú */
+    position: relative; /* Para el efecto de sombra */
+
+}
 nav ul li {
     display: inline;
     margin-left: 20px;
