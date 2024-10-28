@@ -7,13 +7,11 @@ function updateTime() {
     // Eliminar la clase 'show' para desencadenar la animación nuevamente
     backgroundImageContainer.classList.remove('show');
   
-    fetch(`https://worldtimeapi.org/api/timezone/${selectedCountry}`)
+    // Usar la API alternativa de Time API
+    fetch(`https://timeapi.io/api/Time/current/zone?timeZone=${selectedCountry}`)
         .then(response => response.json())
         .then(data => {
-            const utcTime = new Date(data.utc_datetime);
-            const localTime = new Date(utcTime.toLocaleString("en-US", { timeZone: selectedCountry }));
-  
-            const formattedTime = localTime.toLocaleTimeString('en-US', {
+            const formattedTime = new Date(data.dateTime).toLocaleTimeString('en-US', {
                 hour12: true,
                 hour: 'numeric',
                 minute: '2-digit',
@@ -32,10 +30,10 @@ function updateTime() {
             console.error('Error fetching time:', error);
             document.getElementById('time').textContent = 'Error fetching time';
         });
-  }
-  
-  // Llama a updateTime cuando se cambia la selección de país
-  document.getElementById('country-select').addEventListener('change', updateTime);
-  
-  // Llama a updateTime al cargar la página
-  updateTime();
+}
+
+// Llama a updateTime cuando se cambia la selección de país
+document.getElementById('country-select').addEventListener('change', updateTime);
+
+// Llama a updateTime al cargar la página
+updateTime();
