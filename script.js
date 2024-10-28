@@ -1,3 +1,5 @@
+let intervalId;
+
 function updateTime() {
     const selectedOption = document.getElementById('country-select').options[document.getElementById('country-select').selectedIndex];
     const selectedCountry = selectedOption.value;
@@ -7,22 +9,29 @@ function updateTime() {
     // Eliminar la clase 'show' para desencadenar la animación nuevamente
     backgroundImageContainer.classList.remove('show');
   
-    // Usar la API alternativa de Time API
+    // Limpiar cualquier intervalo previo
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+  
+    // Obtener la hora inicial desde la API
     fetch(`https://timeapi.io/api/Time/current/zone?timeZone=${selectedCountry}`)
         .then(response => response.json())
         .then(data => {
-            const formattedTime = new Date(data.dateTime).toLocaleTimeString('en-US', {
-                hour12: true,
-                hour: 'numeric',
-                minute: '2-digit',
-                second: '2-digit'
-            });
-            document.getElementById('time').textContent = formattedTime;
-  
+            let localTime = new Date(data.dateTime);
+
+            // Mostrar la hora inicial
+            displayTime(localTime);
+
+            // Iniciar un intervalo para actualizar el tiempo localmente cada segundo
+            intervalId = setInterval(() => {
+                localTime.setSeconds(localTime.getSeconds() + 1); // Incrementa 1 segundo
+                displayTime(localTime);
+            }, 1000);
+
             // Agregar clase 'show' después de un breve retraso para permitir la animación
             setTimeout(() => {
                 backgroundImageContainer.classList.add('show');
-                // Cambiar la imagen de fondo después de agregar la clase 'show'
                 backgroundImageContainer.style.backgroundImage = `url(${selectedImage})`;
             }, 100);
         })
@@ -32,8 +41,20 @@ function updateTime() {
         });
 }
 
+// Función para mostrar la hora en el formato deseado
+function displayTime(time) {
+    const formattedTime = time.toLocaleTimeString('en-US', {
+        hour12: true,
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    document.getElementById('time').textContent = formattedTime;
+}
+
 // Llama a updateTime cuando se cambia la selección de país
 document.getElementById('country-select').addEventListener('change', updateTime);
 
 // Llama a updateTime al cargar la página
 updateTime();
+
