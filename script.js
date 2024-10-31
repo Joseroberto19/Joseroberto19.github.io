@@ -1,3 +1,55 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const track = document.querySelector(".carousel-track");
+    const items = Array.from(track.children);
+    const nextButton = document.querySelector(".carousel-control.next");
+    const prevButton = document.querySelector(".carousel-control.prev");
+    const itemWidth = items[0].getBoundingClientRect().width;
+    let currentIndex = 0;
+
+    function updateCarouselPosition() {
+        const offset = -currentIndex * (itemWidth + 10); // 10 es el margen horizontal entre items
+        track.style.transform = `translateX(${offset}px)`;
+        updateVisibility();
+    }
+
+    function updateVisibility() {
+        items.forEach((item, index) => {
+            if (index >= currentIndex && index < currentIndex + 3) { // Mostrar solo los 3 visibles
+                item.classList.add('visible');
+            } else {
+                item.classList.remove('visible');
+            }
+        });
+    }
+
+    function nextSlide() {
+        if (currentIndex < items.length - 3) { // Mostrar solo hasta 3 elementos al final
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Regresa al inicio
+        }
+        updateCarouselPosition();
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = items.length - 3; // Salta al final para mostrar los últimos 3
+        }
+        updateCarouselPosition();
+    }
+
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
+
+    // Desplazamiento automático cada 3 segundos
+    setInterval(nextSlide, 3000);
+
+    // Inicializar la posición y visibilidad
+    updateCarouselPosition();
+});
+
 let intervalId;
 
 function updateTime() {
@@ -57,4 +109,4 @@ document.getElementById('country-select').addEventListener('change', updateTime)
 
 // Llama a updateTime al cargar la página
 updateTime();
-
+//////////

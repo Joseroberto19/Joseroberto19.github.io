@@ -1,4 +1,5 @@
 /* Estilos generales */
+
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
@@ -39,6 +40,74 @@ header {
 .a_titulo_unique {
     text-decoration: none;
     color: #FFF;
+}
+/*CARRUSEL*/
+.cv-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 80px;
+}
+
+.download-btn {
+    padding: 12px 24px;
+    color: #FFF;
+    font-size: 16px;
+    background-color: #333;
+    border: 2px solid #9400D3;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.download-btn:hover {
+    color: #9400D3;
+    background-color: transparent;
+}
+.carousel {
+    position: relative;
+    width: 500px; /* Ancho total del carrusel para mostrar 3 elementos */
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 150px; /* Ancho de cada item para mostrar tres */
+    margin: 0 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+}
+.carousel-item.active {
+    display: block;
+}
+.carousel img {
+    width: 100%;
+    border-radius: 10px;
+}
+.carousel-item.visible {
+    opacity: 1; /* Solo los elementos visibles tienen opacidad completa */
+}
+.carousel-control.prev,
+.carousel-control.next {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; /* Deshabilita los clics */
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 /* Menú hamburguesa */
@@ -137,7 +206,7 @@ h2 {
 /* Estilos para la sección de proyectos */
 .projects-grid-unique {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste para una mejor distribución */
     gap: 20px;
 }
 
@@ -192,30 +261,6 @@ footer p {
 }
 
 
-/* Botón de descarga */
-.download-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    color: #FFF;
-    font-size: 16px;
-    text-decoration: none;
-    text-align: center;
-    background-color: #333;
-    border: 2px solid #9400D3; /* Morado oscuro */
-    border-radius: 5px;
-    transition: 0.3s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Hover con efecto neón morado */
-.download-btn:hover {
-    color: #9400D3;
-    box-shadow: 0 0 15px #9400D3, 0 0 30px #9400D3, 0 0 45px #9400D3; /* Efecto neón */
-    background-color: transparent;
-}
-
 /* Media Queries */
 @media (max-width: 767px) {
     .menu-toggle-unique {
@@ -245,10 +290,6 @@ footer p {
         display: block;
     }
 }
-
-
-
-
 
 
 /* Reloj Digital Estilos */
