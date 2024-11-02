@@ -1,3 +1,18 @@
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector('.menu-toggle-unique');
+    const mobileMenu = document.querySelector('.mobile-menu-unique');
+
+    // Verifica si los elementos existen antes de añadir el event listener
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    } else {
+        console.error("menuToggle o mobileMenu no se encontraron en el DOM.");
+    }
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     const track = document.querySelector(".carousel-track");
     const items = Array.from(track.children);
@@ -109,4 +124,4 @@ document.getElementById('country-select').addEventListener('change', updateTime)
 
 // Llama a updateTime al cargar la página
 updateTime();
-//////////
+/////////

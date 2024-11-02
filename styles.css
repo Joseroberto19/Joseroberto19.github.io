@@ -121,7 +121,7 @@ header {
     width: 25px;
     height: 3px;
     background-color: #FFF;
-    margin: 4px 0;
+    margin: 5px 0;
 }
 
 /* Navegación */
@@ -159,7 +159,7 @@ nav {
     background-color: #141618;
     width: 100%;
     position: absolute;
-    top: 50px;
+    top: 60px;
     left: 0;
 }
 
