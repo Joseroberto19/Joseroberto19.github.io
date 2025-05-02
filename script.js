@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     const menuToggle = document.querySelector('.menu-toggle-unique');
     const mobileMenu = document.querySelector('.mobile-menu-unique');
@@ -81,12 +80,18 @@ function updateTime() {
         clearInterval(intervalId);
     }
   
-    // Obtener la hora inicial desde la API
+    // Obtener la hora inicial desde la API timeapi.io
     fetch(`https://timeapi.io/api/Time/current/zone?timeZone=${selectedCountry}`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la respuesta de la API');
+            }
+            return response.json();
+        })
         .then(data => {
-            let localTime = new Date(data.dateTime);
-
+            // La API devuelve la fecha y hora en formato ISO 8601
+            const localTime = new Date(data.dateTime);
+            
             // Mostrar la hora inicial
             displayTime(localTime);
 
@@ -104,7 +109,11 @@ function updateTime() {
         })
         .catch(error => {
             console.error('Error fetching time:', error);
-            document.getElementById('time').textContent = 'Error fetching time';
+            document.getElementById('time').textContent = 'Error al obtener la hora';
+            
+            // Mostrar la hora local como fallback
+            const fallbackTime = new Date();
+            displayTime(fallbackTime);
         });
 }
 
@@ -122,6 +131,5 @@ function displayTime(time) {
 // Llama a updateTime cuando se cambia la selección de país
 document.getElementById('country-select').addEventListener('change', updateTime);
 
-// Llama a updateTime al cargar la página
-updateTime();
-/////////
+// Llama a updateTime al cargar la página para mostrar la hora inicial
+document.addEventListener("DOMContentLoaded", updateTime);s
