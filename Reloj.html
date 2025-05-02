@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reloj Digital Universal</title>
+  <title>Reloj Digital Universal | JRPN</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="clock-body">
   <div class="background-image clock-background" id="background-image"></div>
   
-  <div class="clock-container unique-clock-container">
-    <div class="clock unique-clock">
-      <div id="time" class="time-display unique-time-display"></div>
+  <div class="unique-clock-container">
+    <h2>Reloj Digital Universal</h2>
+    <div class="unique-clock">
+      <div id="time" class="unique-time-display"></div>
     </div>
 
-    <select id="country-select" class="country-select unique-country-select">
+    <select id="country-select" class="unique-country-select">
       <option value="Europe/London" data-image="imgLandingPage/London.webp">London, UK</option>
-      <option value="America/New_York" data-image="imgLandingPage/Newyork.webp">New York, USA</option>
       <option value="Asia/Tokyo" data-image="imgLandingPage/Japon.jpg">Tokyo, Japan</option>
       <option value="America/Lima" data-image="imgLandingPage/PlazaArmas.jpg">Lima, Peru</option>
-      <!-- Agrega más opciones según sea necesario -->
+      <option value="Europe/Paris" data-image="imgLandingPage/Paris.jpg">Paris, France</option>
+      <option value="Australia/Sydney" data-image="imgLandingPage/Sydney.jpg">Sydney, Australia</option>
     </select>
+    
+    <a href="index.html" class="back-to-portfolio">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Volver al Portafolio
+    </a>
   </div>
 
-  <script src="script.js?v=0.2"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,142 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <meta name="description" content="Portafolio profesional de Jose Roberto Perez Nieves, Desarrollador de Software">
+    <title>Portafolio JRPN | Desarrollador de Software</title>
     <link rel="stylesheet" href="styles.css">
-    <link data-n-head="true" rel="stylesheet" type="text/css" href="https://cloud.typography.com/7626114/6931412/css/fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-container-unique">
-            <h1 class="Titulo_h1_Porta_unique"><a class="a_titulo_unique" href="index.html">Portafolio</a></h1>
-            <div class="menu-toggle-unique">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <nav>
-            <ul class="nav-list-unique">
-                <li class="nav-item-unique"><a href="#about">Acerca de mí</a></li>
-                <li class="nav-item-unique"><a href="#projects">Proyectos</a></li>
-                <li class="nav-item-unique"><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="mobile-menu-unique">
-            <ul>
-                <li class="nav-item-unique"><a href="#about">Acerca de mí</a></li>
-                <li class="nav-item-unique"><a href="#projects">Proyectos</a></li>
-                <li class="nav-item-unique"><a href="#contact">Contacto</a></li>
-            </ul>
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="logo"><a href="index.html">JRPN</a></h1>
+            <button class="menu-toggle" aria-label="Menú" aria-expanded="false">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#hero">Inicio</a></li>
+                    <li class="nav-item"><a href="#about">Acerca de mí</a></li>
+                    <li class="nav-item"><a href="#skills">Habilidades</a></li>
+                    <li class="nav-item"><a href="#projects">Proyectos</a></li>
+                    <li class="nav-item"><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section id="about" class="about-section-unique">
-        <div class="container-unique">
-            <h2> Acerca de Mí </h2>
-            <p>¡Bienvenido a mi portafolio! Soy Jose Roberto Perez Nieves, un Desarrollador de Software apasionado por mi carrera; me gusta hacer deporte 
-                y trato de mejorar cada día como persona y profesionalmente.</p>
-        </div>
-    </section>
-
-    <!-- Sección para el botón de descarga y el carrusel -->
-    <section id="download-cv" class="cv-carousel-wrapper">
-        <a href="https://github.com/Joseroberto19/Recursos/raw/main/CvPersonal/CV_JoseRoberto.pdf" class="download-btn">Descargar CV</a>
-        
-        <div class="carousel">
-            <div class="carousel-track">
-                <div class="carousel-item">
-                    <img src="assets/Angular.png" alt="Imagen 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/react.png" alt="Imagen 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/js.png" alt="Imagen 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/php.png" alt="Imagen 4">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/html.png" alt="Imagen 5">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/Sql.png" alt="Imagen 6">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/mysql.png" alt="Imagen 7">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/cmas.png" alt="Imagen 8">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/python.png" alt="Imagen 9">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/git.png" alt="Imagen 10">
-                </div>
-                <div class="carousel-item">
-                  <img src="assets/Csharp.png" alt="Imagen 11">
-                </div>
-            </div>
-            <button class="carousel-control prev">Anterior</button>
-            <button class="carousel-control next">Siguiente</button>
-        </div>
-    </section>
-
-    <section id="projects" class="projects-section-unique">
-        <div class="container-unique">
-            <h2>Proyectos</h2>
-            <div class="projects-grid-unique">
-                <div class="project-unique">
-                    <div class="project-image-unique">
-                        <img src="imgLandingPage/ClinicaSedi.png" alt="Proyecto 1">
-                        <img src="imgLandingPage/Clinica2.png" alt="Proyecto 1">
-                    </div>
-                    <div class="project-info-unique">
-                        <h3>Clinica</h3>
-                        <p>Sistema de citas y historiales Clínicos</p>
-                    </div>
-                </div>
-                <div class="project-unique">
-                    <div class="project-image-unique">
-                        <a href="https://github.com/Joseroberto19/InventarioV.1.0/tree/CambiosDisenoPrueba">
-                        <img src="imgLandingPage/Inventario.png" alt="Proyecto 2">
-                        </a>
-                    </div>
-                    <div class="project-info-unique">
-                        <h3>Inventario</h3>
-                        <p>Sistema de Inventario</p>
-                    </div>
-                </div>
-                <div class="project-unique">
-                    <div class="project-image-unique">
-                        <a href="Reloj.html">
-                        <img src="imgLandingPage/ProyectoReloj.png" alt="Proyecto 3">
-                        </a>
-                    </div>
-                    <div class="project-info-unique">
-                        <h3>Reloj</h3>
-                        <p>¿Qué hora es?.</p>
+    <main>
+        <section id="hero" class="section hero-section">
+            <div class="container">
+                <div class="hero-content fade-in-up">
+                    <h1 class="hero-title">Jose Roberto Perez Nieves</h1>
+                    <p class="hero-subtitle">Desarrollador de Software</p>
+                    <p class="hero-description">
+                        Creando soluciones digitales innovadoras con pasión y dedicación.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn primary-btn">Ver Proyectos</a>
+                        <a href="#contact" class="btn secondary-btn">Contactar</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Acerca de Mí</h2>
+                <div class="about-content fade-in-up delay-1">
+                    <p class="about-text">
+                        ¡Bienvenido a mi portafolio! Soy Jose Roberto Perez Nieves, un Desarrollador de Software apasionado por crear soluciones tecnológicas que resuelvan problemas reales. 
+                        Me especializo en desarrollo web y aplicaciones, con un enfoque en crear experiencias de usuario intuitivas y atractivas.
+                    </p>
+                    <p class="about-text">
+                        Además de programar, me gusta hacer deporte y trato de mejorar cada día como persona y profesionalmente. Creo firmemente en el aprendizaje continuo y en mantenerme actualizado con las últimas tecnologías.
+                    </p>
+                    <div class="cta-container">
+                        <a href="https://github.com/Joseroberto19/Recursos/raw/main/CvPersonal/CV_JoseRoberto.pdf" 
+                           class="btn download-btn" 
+                           download="CV_JoseRoberto_Perez_Nieves.pdf">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Descargar CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer id="contact" class="footer-unique">
-        <div class="container-unique">
-            <p>&copy; 2024 Portafolio JRPN. Todos los derechos reservados.</p>
-            <div class="Logos-item-unique">
-                <a href="https://www.instagram.com/jose_roberto.p.nieves/"><img src="assets/instanegro.png" alt="Instagram"></a>
-                <a href="https://wa.me/962897441?text=Hola un gusto en conocerte"><img src="assets/whatsapp.png" alt="Teléfono"></a>
-                <a href="https://github.com/Joseroberto19?tab=repositories"><img src="assets/github.png" alt="GitHub"></a>
+        <section id="skills" class="section skills-section">
+            <div class="container skills-container">
+                <h2 class="section-title fade-in-up">Habilidades Técnicas</h2>
+                <div class="carousel fade-in-up delay-1">
+                    <div class="carousel-track">
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/Angular.png" alt="Angular" loading="lazy">
+                                <span class="skill-name">Angular</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/react.png" alt="React" loading="lazy">
+                                <span class="skill-name">React</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/js.png" alt="JavaScript" loading="lazy">
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/php.png" alt="PHP" loading="lazy">
+                                <span class="skill-name">PHP</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/html.png" alt="HTML5" loading="lazy">
+                                <span class="skill-name">HTML5</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/Sql.png" alt="SQL" loading="lazy">
+                                <span class="skill-name">SQL</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/mysql.png" alt="MySQL" loading="lazy">
+                                <span class="skill-name">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/cmas.png" alt="C++" loading="lazy">
+                                <span class="skill-name">C++</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/python.png" alt="Python" loading="lazy">
+                                <span class="skill-name">Python</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/git.png" alt="Git" loading="lazy">
+                                <span class="skill-name">Git</span>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-item-inner">
+                                <img src="assets/Csharp.png" alt="C#" loading="lazy">
+                                <span class="skill-name">C#</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control prev" aria-label="Anterior">‹</button>
+                    <button class="carousel-control next" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title fade-in-up">Proyectos Destacados</h2>
+                <div class="projects-grid">
+                    <article class="project-card fade-in-up delay-1">
+                        <div class="project-media">
+                            <img src="imgLandingPage/ClinicaSedi.png" alt="Sistema de Clínica - Captura 1" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Sistema Clínico</h3>
+                            <p class="project-description">
+                                Sistema de gestión de citas y historiales médicos para clínicas. Desarrollado con tecnologías modernas para optimizar los procesos administrativos y mejorar la atención al paciente.
+                            </p>
+                            <div class="project-links">
+                                <a href="#" class="btn project-link" aria-label="Ver proyecto Sistema Clínico">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                    Ver más
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card fade-in-up delay-2">
+                        <div class="project-media">
+                            <a href="https://github.com/Joseroberto19/InventarioV.1.0/tree/CambiosDisenoPrueba" target="_blank" rel="noopener noreferrer">
+                                <img src="imgLandingPage/Inventario.png" alt="Sistema de Inventario" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Sistema de Inventario</h3>
+                            <p class="project-description">
+                                Plataforma para gestión y control de inventarios empresariales. Facilita el seguimiento de productos, genera informes y optimiza el proceso de gestión de stock.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/Joseroberto19/InventarioV.1.0/tree/CambiosDisenoPrueba" 
+                                   class="btn project-link" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   aria-label="Ver código de Sistema de Inventario">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                    </svg>
+                                    Ver código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card fade-in-up delay-3">
+                        <div class="project-media">
+                            <a href="Reloj.html">
+                                <img src="imgLandingPage/ProyectoReloj.png" alt="Proyecto Reloj Digital" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Reloj Digital</h3>
+                            <p class="project-description">
+                                Aplicación web interactiva que muestra la hora actual en diferentes zonas horarias. Incluye fondos dinámicos que cambian según la ubicación seleccionada.
+                            </p>
+                            <div class="project-links">
+                                <a href="Reloj.html" class="btn project-link" aria-label="Ver proyecto Reloj Digital">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    Ver demo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-nav">
+                    <a href="#hero">Inicio</a>
+                    <a href="#about">Acerca de mí</a>
+                    <a href="#skills">Habilidades</a>
+                    <a href="#projects">Proyectos</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/jose_roberto.p.nieves/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Instagram"
+                       class="social-link">
+                        <img src="assets/instanegro.png" alt="Instagram" loading="lazy">
+                    </a>
+                    <a href="https://wa.me/962897441?text=Hola un gusto en conocerte" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="WhatsApp"
+                       class="social-link">
+                        <img src="assets/whatsapp.png" alt="WhatsApp" loading="lazy">
+                    </a>
+                    <a href="https://github.com/Joseroberto19?tab=repositories" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="GitHub"
+                       class="social-link">
+                        <img src="assets/github.png" alt="GitHub" loading="lazy">
+                    </a>
+                </div>
+                <p class="copyright">&copy; <span id="current-year">2024</span> Jose Roberto Perez Nieves. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-<script src="script.js?v=0.2"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

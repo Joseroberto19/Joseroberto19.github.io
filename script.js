@@ -1,135 +1,214 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const menuToggle = document.querySelector('.menu-toggle-unique');
-    const mobileMenu = document.querySelector('.mobile-menu-unique');
-
-    // Verifica si los elementos existen antes de añadir el event listener
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('active');
-        });
-    } else {
-        console.error("menuToggle o mobileMenu no se encontraron en el DOM.");
+document.addEventListener("DOMContentLoaded", () => {
+    // Header scroll effect
+    const header = document.querySelector(".header")
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled")
+      } else {
+        header.classList.remove("scrolled")
+      }
+    })
+  
+    // Mobile menu toggle
+    const menuToggle = document.querySelector(".menu-toggle")
+    const navigation = document.querySelector(".navigation")
+  
+    if (menuToggle && navigation) {
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active")
+        navigation.classList.toggle("active")
+      })
+  
+      // Close menu when clicking on a link
+      const navLinks = document.querySelectorAll(".nav-item a")
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("active")
+          navigation.classList.remove("active")
+        })
+      })
     }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const track = document.querySelector(".carousel-track");
-    const items = Array.from(track.children);
-    const nextButton = document.querySelector(".carousel-control.next");
-    const prevButton = document.querySelector(".carousel-control.prev");
-    const itemWidth = items[0].getBoundingClientRect().width;
-    let currentIndex = 0;
-
-    function updateCarouselPosition() {
-        const offset = -currentIndex * (itemWidth + 10); // 10 es el margen horizontal entre items
-        track.style.transform = `translateX(${offset}px)`;
-        updateVisibility();
-    }
-
-    function updateVisibility() {
+  
+    // Skills carousel
+    const track = document.querySelector(".carousel-track")
+    if (track) {
+      const items = Array.from(track.children)
+      const nextButton = document.querySelector(".carousel-control.next")
+      const prevButton = document.querySelector(".carousel-control.prev")
+      const itemWidth = items[0].getBoundingClientRect().width
+      let currentIndex = 0
+      let visibleItems = 6
+  
+      // Adjust visible items based on screen width
+      function updateVisibleItemsCount() {
+        if (window.innerWidth < 768) {
+          visibleItems = 1
+        } else if (window.innerWidth < 992) {
+          visibleItems = 2
+        } else {
+          visibleItems = 6
+        }
+      }
+  
+      updateVisibleItemsCount()
+      window.addEventListener("resize", updateVisibleItemsCount)
+  
+      function updateCarouselPosition() {
+        const offset = -currentIndex * itemWidth
+        track.style.transform = `translateX(${offset}px)`
+        updateVisibility()
+      }
+  
+      function updateVisibility() {
         items.forEach((item, index) => {
-            if (index >= currentIndex && index < currentIndex + 3) { // Mostrar solo los 3 visibles
-                item.classList.add('visible');
-            } else {
-                item.classList.remove('visible');
-            }
-        });
-    }
-
-    function nextSlide() {
-        if (currentIndex < items.length - 3) { // Mostrar solo hasta 3 elementos al final
-            currentIndex++;
+          if (index >= currentIndex && index < currentIndex + visibleItems) {
+            item.classList.add("visible")
+          } else {
+            item.classList.remove("visible")
+          }
+        })
+      }
+  
+      function nextSlide() {
+        if (currentIndex < items.length - visibleItems) {
+          currentIndex++
         } else {
-            currentIndex = 0; // Regresa al inicio
+          currentIndex = 0
         }
-        updateCarouselPosition();
-    }
-
-    function prevSlide() {
+        updateCarouselPosition()
+      }
+  
+      function prevSlide() {
         if (currentIndex > 0) {
-            currentIndex--;
+          currentIndex--
         } else {
-            currentIndex = items.length - 3; // Salta al final para mostrar los últimos 3
+          currentIndex = items.length - visibleItems
         }
-        updateCarouselPosition();
+        updateCarouselPosition()
+      }
+  
+      if (nextButton && prevButton) {
+        nextButton.addEventListener("click", nextSlide)
+        prevButton.addEventListener("click", prevSlide)
+      }
+  
+      // Auto-scroll with pause on hover
+      let autoScrollInterval
+  
+      function startAutoScroll() {
+        autoScrollInterval = setInterval(nextSlide, 3000)
+      }
+  
+      function stopAutoScroll() {
+        clearInterval(autoScrollInterval)
+      }
+  
+      const carousel = document.querySelector(".carousel")
+      if (carousel) {
+        carousel.addEventListener("mouseenter", stopAutoScroll)
+        carousel.addEventListener("mouseleave", startAutoScroll)
+      }
+  
+      startAutoScroll()
+      updateCarouselPosition()
     }
-
-    nextButton.addEventListener("click", nextSlide);
-    prevButton.addEventListener("click", prevSlide);
-
-    // Desplazamiento automático cada 3 segundos
-    setInterval(nextSlide, 3000);
-
-    // Inicializar la posición y visibilidad
-    updateCarouselPosition();
-});
-
-let intervalId;
-
-function updateTime() {
-    const selectedOption = document.getElementById('country-select').options[document.getElementById('country-select').selectedIndex];
-    const selectedCountry = selectedOption.value;
-    const selectedImage = selectedOption.getAttribute('data-image');
-    const backgroundImageContainer = document.querySelector('.background-image');
   
-    // Eliminar la clase 'show' para desencadenar la animación nuevamente
-    backgroundImageContainer.classList.remove('show');
+    // Animation on scroll
+    const animatedElements = document.querySelectorAll(".fade-in-up")
   
-    // Limpiar cualquier intervalo previo
-    if (intervalId) {
-        clearInterval(intervalId);
+    function checkScroll() {
+      animatedElements.forEach((el) => {
+        const elementTop = el.getBoundingClientRect().top
+        const windowHeight = window.innerHeight
+  
+        if (elementTop < windowHeight * 0.9) {
+          el.style.opacity = "1"
+          el.style.transform = "translateY(0)"
+        }
+      })
     }
   
-    // Obtener la hora inicial desde la API timeapi.io
-    fetch(`https://timeapi.io/api/Time/current/zone?timeZone=${selectedCountry}`)
-        .then(response => {
+    window.addEventListener("scroll", checkScroll)
+    checkScroll() // Check on load
+  
+    // Clock functionality
+    const clockElement = document.getElementById("time")
+    const countrySelect = document.getElementById("country-select")
+    const backgroundImageContainer = document.querySelector(".clock-background")
+  
+    if (clockElement && countrySelect) {
+      let intervalId
+  
+      function updateTime() {
+        const selectedOption = countrySelect.options[countrySelect.selectedIndex]
+        const selectedCountry = selectedOption.value
+        const selectedImage = selectedOption.getAttribute("data-image")
+  
+        if (backgroundImageContainer) {
+          backgroundImageContainer.classList.remove("show")
+        }
+  
+        if (intervalId) {
+          clearInterval(intervalId)
+        }
+  
+        fetch(`https://timeapi.io/api/Time/current/zone?timeZone=${selectedCountry}`)
+          .then((response) => {
             if (!response.ok) {
-                throw new Error('Error en la respuesta de la API');
+              throw new Error("Error en la respuesta de la API")
             }
-            return response.json();
-        })
-        .then(data => {
-            // La API devuelve la fecha y hora en formato ISO 8601
-            const localTime = new Date(data.dateTime);
-            
-            // Mostrar la hora inicial
-            displayTime(localTime);
-
-            // Iniciar un intervalo para actualizar el tiempo localmente cada segundo
+            return response.json()
+          })
+          .then((data) => {
+            const localTime = new Date(data.dateTime)
+  
+            displayTime(localTime)
+  
             intervalId = setInterval(() => {
-                localTime.setSeconds(localTime.getSeconds() + 1); // Incrementa 1 segundo
-                displayTime(localTime);
-            }, 1000);
-
-            // Agregar clase 'show' después de un breve retraso para permitir la animación
-            setTimeout(() => {
-                backgroundImageContainer.classList.add('show');
-                backgroundImageContainer.style.backgroundImage = `url(${selectedImage})`;
-            }, 100);
+              localTime.setSeconds(localTime.getSeconds() + 1)
+              displayTime(localTime)
+            }, 1000)
+  
+            if (backgroundImageContainer && selectedImage) {
+              setTimeout(() => {
+                backgroundImageContainer.classList.add("show")
+                backgroundImageContainer.style.backgroundImage = `url(${selectedImage})`
+              }, 100)
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching time:", error)
+            if (clockElement) {
+              clockElement.textContent = "Error al obtener la hora"
+            }
+  
+            const fallbackTime = new Date()
+            displayTime(fallbackTime)
+          })
+      }
+  
+      function displayTime(time) {
+        const formattedTime = time.toLocaleTimeString("en-US", {
+          hour12: true,
+          hour: "numeric",
+          minute: "2-digit",
+          second: "2-digit",
         })
-        .catch(error => {
-            console.error('Error fetching time:', error);
-            document.getElementById('time').textContent = 'Error al obtener la hora';
-            
-            // Mostrar la hora local como fallback
-            const fallbackTime = new Date();
-            displayTime(fallbackTime);
-        });
-}
-
-// Función para mostrar la hora en el formato deseado
-function displayTime(time) {
-    const formattedTime = time.toLocaleTimeString('en-US', {
-        hour12: true,
-        hour: 'numeric',
-        minute: '2-digit',
-        second: '2-digit'
-    });
-    document.getElementById('time').textContent = formattedTime;
-}
-
-// Llama a updateTime cuando se cambia la selección de país
-document.getElementById('country-select').addEventListener('change', updateTime);
-
-// Llama a updateTime al cargar la página para mostrar la hora inicial
-document.addEventListener("DOMContentLoaded", updateTime);s
+        clockElement.textContent = formattedTime
+      }
+  
+      countrySelect.addEventListener("change", updateTime)
+  
+      // Initialize clock
+      if (window.location.pathname.includes("Reloj.html")) {
+        updateTime()
+      }
+    }
+  
+    // Update copyright year
+    const yearElement = document.getElementById("current-year")
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear()
+    }
+  })
+  
