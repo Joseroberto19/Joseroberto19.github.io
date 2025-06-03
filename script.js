@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (window.innerWidth < 992) {
                 visibleItems = 2
             } else {
-                visibleItems = 6
+                visibleItems = 5
             }
         }
 
