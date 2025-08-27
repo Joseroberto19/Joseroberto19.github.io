@@ -79,77 +79,183 @@
         <section id="skills" class="section skills-section">
             <div class="container skills-container">
                 <h2 class="section-title fade-in-up">Habilidades Técnicas</h2>
-                <div class="carousel fade-in-up delay-1">
-                    <div class="carousel-track">
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/Angular.png" alt="Angular" loading="lazy">
-                                <span class="skill-name">Angular</span>
-                            </div>
+                <!-- Modified grid to collapsible accordion-style cards -->
+                <div class="skills-grid fade-in-up delay-1">
+                    <div class="skill-card" data-skill="angular">
+                        <div class="skill-header">
+                            <img src="assets/Angular.webp" alt="Angular" loading="lazy">
+                            <h3 class="skill-title">Angular</h3>
+                            <span class="skill-toggle">+</span>
                         </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/react.png" alt="React" loading="lazy">
-                                <span class="skill-name">React</span>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/js.png" alt="JavaScript" loading="lazy">
-                                <span class="skill-name">JavaScript</span>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/php.png" alt="PHP" loading="lazy">
-                                <span class="skill-name">PHP</span>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/html.png" alt="HTML5" loading="lazy">
-                                <span class="skill-name">HTML5</span>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/Sql.png" alt="SQL" loading="lazy">
-                                <span class="skill-name">SQL</span>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/mysql.png" alt="MySQL" loading="lazy">
-                                <span class="skill-name">MySQL</span>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/cmas.png" alt="C++" loading="lazy">
-                                <span class="skill-name">C++</span>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/python.png" alt="Python" loading="lazy">
-                                <span class="skill-name">Python</span>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/git.png" alt="Git" loading="lazy">
-                                <span class="skill-name">Git</span>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="carousel-item-inner">
-                                <img src="assets/Csharp.png" alt="C#" loading="lazy">
-                                <span class="skill-name">C#</span>
-                            </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                Angular es un framework de desarrollo web robusto y escalable desarrollado por Google. Me permite crear aplicaciones web dinámicas y de una sola página (SPA) con una arquitectura bien estructurada basada en componentes.
+                            </p>
+                            <p class="skill-description">
+                                Su sistema de inyección de dependencias, el poderoso CLI y las herramientas de testing integradas me ayudan a desarrollar aplicaciones empresariales complejas con alta mantenibilidad y rendimiento optimizado.
+                            </p>
                         </div>
                     </div>
-                    <button class="carousel-control prev" aria-label="Anterior">‹</button>
-                    <button class="carousel-control next" aria-label="Siguiente">›</button>
+
+                    <div class="skill-card" data-skill="react">
+                        <div class="skill-header">
+                            <img src="assets/react.webp" alt="React" loading="lazy">
+                            <h3 class="skill-title">React</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                React es la biblioteca de JavaScript que más utilizo para crear interfaces de usuario interactivas y modernas. Su enfoque basado en componentes y el Virtual DOM me permiten desarrollar aplicaciones web eficientes y reutilizables.
+                            </p>
+                            <p class="skill-description">
+                                Con React puedo manejar el estado de la aplicación de manera efectiva usando hooks, crear experiencias de usuario fluidas y mantener un código limpio y organizado que facilita el trabajo en equipo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="javascript">
+                        <div class="skill-header">
+                            <img src="assets/js.webp" alt="JavaScript" loading="lazy">
+                            <h3 class="skill-title">JavaScript</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                JavaScript es el lenguaje fundamental que domino para el desarrollo web moderno. Me permite crear interactividad en el frontend y desarrollar aplicaciones completas en el backend con Node.js.
+                            </p>
+                            <p class="skill-description">
+                                Manejo conceptos avanzados como programación asíncrona, closures, prototipos y ES6+. Esta base sólida me permite adaptarme rápidamente a cualquier framework o biblioteca del ecosistema JavaScript.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="php">
+                        <div class="skill-header">
+                            <img src="assets/php.webp" alt="PHP" loading="lazy">
+                            <h3 class="skill-title">PHP</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                PHP es mi lenguaje de elección para el desarrollo backend y la creación de aplicaciones web dinámicas. Su integración natural con bases de datos y servidores web me permite desarrollar soluciones robustas y escalables.
+                            </p>
+                            <p class="skill-description">
+                                Utilizo PHP para crear APIs RESTful, sistemas de gestión de contenido y aplicaciones empresariales. Su amplia comunidad y ecosistema de frameworks como Laravel me ayudan a acelerar el desarrollo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="html">
+                        <div class="skill-header">
+                            <img src="assets/html.webp" alt="HTML5" loading="lazy">
+                            <h3 class="skill-title">HTML5</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                HTML5 es la base de todas mis aplicaciones web. Domino su estructura semántica y las nuevas características que ofrece, como elementos multimedia, canvas, y APIs modernas del navegador.
+                            </p>
+                            <p class="skill-description">
+                                Aplico las mejores prácticas de accesibilidad y SEO, utilizando etiquetas semánticas apropiadas y estructuras que mejoran tanto la experiencia del usuario como la indexación en motores de búsqueda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="sql">
+                        <div class="skill-header">
+                            <img src="assets/Sql.webp" alt="SQL" loading="lazy">
+                            <h3 class="skill-title">SQL</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                SQL es mi herramienta principal para el manejo y consulta de bases de datos relacionales. Domino desde consultas básicas hasta procedimientos almacenados complejos y optimización de rendimiento.
+                            </p>
+                            <p class="skill-description">
+                                Puedo diseñar esquemas de bases de datos eficientes, crear índices apropiados y escribir consultas optimizadas que manejan grandes volúmenes de datos manteniendo un rendimiento óptimo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="mysql">
+                        <div class="skill-header">
+                            <img src="assets/mysql.webp" alt="MySQL" loading="lazy">
+                            <h3 class="skill-title">MySQL</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                MySQL es mi sistema de gestión de bases de datos preferido para proyectos web. Su confiabilidad, rendimiento y facilidad de uso lo convierten en la opción ideal para aplicaciones desde pequeñas hasta empresariales.
+                            </p>
+                            <p class="skill-description">
+                                Tengo experiencia en configuración de servidores MySQL, replicación, backup y recovery. También manejo herramientas de administración y monitoreo para mantener bases de datos en producción.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="cpp">
+                        <div class="skill-header">
+                            <img src="assets/cmas.webp" alt="C++" loading="lazy">
+                            <h3 class="skill-title">C++</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                C++ me proporciona una base sólida en programación de sistemas y algoritmos eficientes. Su control de memoria y rendimiento lo hacen ideal para aplicaciones que requieren alta performance.
+                            </p>
+                            <p class="skill-description">
+                                Aunque principalmente me enfoco en desarrollo web, mi conocimiento de C++ me ayuda a entender conceptos fundamentales de programación y me permite abordar problemas complejos con una perspectiva más amplia.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="python">
+                        <div class="skill-header">
+                            <img src="assets/python.webp" alt="Python" loading="lazy">
+                            <h3 class="skill-title">Python</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                Python es mi lenguaje de elección para automatización, análisis de datos y desarrollo de scripts. Su sintaxis clara y amplia biblioteca estándar me permiten resolver problemas complejos de manera elegante.
+                            </p>
+                            <p class="skill-description">
+                                Utilizo Python para crear herramientas de automatización, procesar datos, y desarrollar APIs con frameworks como Django o Flask. Su versatilidad lo convierte en una herramienta invaluable en mi arsenal de desarrollo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="git">
+                        <div class="skill-header">
+                            <img src="assets/git.webp" alt="Git" loading="lazy">
+                            <h3 class="skill-title">Git</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                Git es fundamental en mi flujo de trabajo diario. Manejo control de versiones avanzado, branching strategies, y colaboración en equipo a través de plataformas como GitHub y GitLab.
+                            </p>
+                            <p class="skill-description">
+                                Domino conceptos como merge, rebase, cherry-pick y resolución de conflictos. Esta experiencia me permite mantener un historial de código limpio y colaborar efectivamente en proyectos de cualquier escala.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="csharp">
+                        <div class="skill-header">
+                            <img src="assets/Csharp.webp" alt="C#" loading="lazy">
+                            <h3 class="skill-title">C#</h3>
+                            <span class="skill-toggle">+</span>
+                        </div>
+                        <div class="skill-content">
+                            <p class="skill-description">
+                                C# es mi lenguaje para desarrollo en el ecosistema Microsoft. Con .NET puedo crear desde aplicaciones web con ASP.NET hasta aplicaciones de escritorio robustas y escalables.
+                            </p>
+                            <p class="skill-description">
+                                Su fuerte tipado, orientación a objetos y integración con Visual Studio me proporcionan un entorno de desarrollo productivo para crear soluciones empresariales complejas con alta calidad y mantenibilidad.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
